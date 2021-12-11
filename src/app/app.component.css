@@ -1,0 +1,139 @@
+* {
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+}
+
+nav {
+        background: cadetblue;
+        line-height: 80px;
+        position: fixed;
+        width: 100%;
+
+}
+
+label {
+        line-height: 80px;
+        cursor: pointer;
+}
+
+nav ul {
+        float: right;
+        margin-right: 20px;
+
+}
+
+nav ul li {
+        line-height: 80px;
+        margin: 0 10px;
+}
+
+nav ul li a {
+        color: #000;
+        font-size: 20px;
+        padding: 6px 15px;
+        font-weight: 600;
+        background: #fff;
+        border-radius: 2px;
+}
+
+.side-menu {
+        background: cadetblue;
+        position: fixed;
+        color: whitesmoke;
+        width: 250px;
+        height: 100%;
+        margin-top: 80px;
+        padding-bottom: 100px;
+        overflow-y: scroll;
+}
+
+.side-menu::-webkit-scrollbar {
+        display: none;
+}
+
+.side-menu a {
+        display: block;
+        line-height: 50px;
+        color: whitesmoke;
+        transition: 0.5s;
+}
+
+.side-menu a:hover {
+        background: rgb(39, 39, 39);
+        padding-left: 20px;
+        ;
+}
+
+nav .menu-bar {
+        float: right;
+        margin-top: 20px;
+        display: none;
+        margin-right: 20px;
+        ;
+}
+
+#menu {
+        display: none;
+}
+
+.side-menu .logout {
+        display: none;
+}
+
+.tutorial-name {
+        text-align: center;
+}
+
+.data {
+        background: gray;
+        height: 100vh;
+        overflow-y: scroll;
+        margin-left: 280px;
+        margin-top: 50px;
+        color: whitesmoke;
+
+}
+
+@media (max-width:800px) {
+        .side-menu a {
+                display: none;
+        }
+
+        .side-menu .tutorial-name {
+                display: none;
+        }
+
+        .side-menu {
+                width: 100%;
+                background: rgb(146, 146, 211);
+                transition: all 0.5s;
+        }
+
+        .data {
+                margin-left: 0px;
+        }
+
+        .side-menu a {
+                display: block;
+                text-align: center;
+        }
+
+        nav .menu-bar {
+                display: block;
+        }
+
+        .side-menu {
+                display: none;
+        }
+
+}
+
+
+#menu:checked~.side-menu {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 80px;
+}
