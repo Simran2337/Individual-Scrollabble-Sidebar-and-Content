@@ -1,82 +1,54 @@
-* {
-        padding: 0;
-        margin: 0;
-        text-decoration: none;
-        list-style: none;
-        box-sizing: border-box;
-}
-
 nav {
-        background: cadetblue;
-        line-height: 80px;
+        background: lightgreen;
         position: fixed;
         width: 100%;
-
+        top: 0;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 }
 
-label {
-        line-height: 80px;
-        cursor: pointer;
+.nav-text {
+        margin-left: 20px;
 }
 
-nav ul {
-        float: right;
-        margin-right: 20px;
-
-}
-
-nav ul li {
-        line-height: 80px;
-        margin: 0 10px;
-}
-
-nav ul li a {
-        color: #000;
-        font-size: 20px;
-        padding: 6px 15px;
-        font-weight: 600;
-        background: #fff;
-        border-radius: 2px;
+.container {
+        top: 50px;
+        position: fixed;
+        display: flex;
+        flex-direction: row;
 }
 
 .side-menu {
+        flex: 1;
         background: cadetblue;
-        position: fixed;
         color: whitesmoke;
-        width: 250px;
-        height: 100%;
-        margin-top: 80px;
-        padding-bottom: 100px;
-        overflow-y: scroll;
 }
 
-.side-menu::-webkit-scrollbar {
-        display: none;
+.side-content {
+        overflow-y: auto;
+        height: calc(100vh - 50px);
 }
 
-.side-menu a {
+.side-content a {
         display: block;
-        line-height: 50px;
+        line-height: 40px;
         color: whitesmoke;
         transition: 0.5s;
+        padding-left: 10px;
+        min-height: 0;
 }
 
-.side-menu a:hover {
+.side-content a:hover {
         background: rgb(39, 39, 39);
         padding-left: 20px;
-        ;
 }
 
-nav .menu-bar {
-        float: right;
-        margin-top: 20px;
+.menu-bar {
         display: none;
         margin-right: 20px;
-        ;
-}
-
-#menu {
-        display: none;
+        cursor: pointer;
 }
 
 .side-menu .logout {
@@ -84,56 +56,45 @@ nav .menu-bar {
 }
 
 .tutorial-name {
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 }
 
 .data {
-        background: gray;
-        height: 100vh;
-        overflow-y: scroll;
-        margin-left: 280px;
-        margin-top: 50px;
-        color: whitesmoke;
-
+        flex: 4;
 }
 
-@media (max-width:800px) {
-        .side-menu a {
-                display: none;
-        }
+.data-content {
+        margin: 0;
+        overflow-y: auto;
+        height: calc(100vh - 50px);
+        text-align: justify;
+}
 
-        .side-menu .tutorial-name {
-                display: none;
-        }
+.data-actual-content {
+        padding: 10px;
+}
 
-        .side-menu {
-                width: 100%;
-                background: rgb(146, 146, 211);
-                transition: all 0.5s;
-        }
+#menuu {
+        display: none;
+}
 
-        .data {
-                margin-left: 0px;
-        }
+.logout-btn {
+        margin-right: 20px;
+}
 
-        .side-menu a {
-                display: block;
-                text-align: center;
-        }
-
-        nav .menu-bar {
+@media (max-width: 800px) {
+        .container, .side-menu .side-content, .data, .data-content, .side-menu .logout, .menu-bar {
                 display: block;
         }
 
-        .side-menu {
+        .logout-btn, .side-menu {
                 display: none;
         }
-
 }
 
-
-#menu:checked~.side-menu {
-        display: flex;
-        flex-direction: column;
-        padding-bottom: 80px;
+.show-menu {
+        display: block !important;
+        transition: 1s;
 }
